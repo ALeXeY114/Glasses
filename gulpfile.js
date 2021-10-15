@@ -40,6 +40,12 @@ function scripts() {
 		.pipe(browserSync.stream());
 }
 
+function htmlDist() {
+	return gulp(htmlFiles)
+		.pipe(concat ('index.html'))
+		.pipe(gulp.dest('./dist/html'))
+}
+
 function watch() {
 	    browserSync.init({
         server: {
@@ -61,9 +67,10 @@ function clean() {
 gulp.task('styles', styles);
 gulp.task('scripts', scripts);
 gulp.task('watch', watch);
+gulp.task('htmlDist', htmlDist);
 
 gulp.task('build', gulp.series (clean,
-					gulp.parallel(styles,scripts)
+					gulp.parallel(styles,scripts,htmlDist)
 					));
 
 gulp.task('dev', gulp.series('build','watch'));
