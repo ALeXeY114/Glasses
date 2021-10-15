@@ -5,7 +5,7 @@
   "main": "gulpfile.js",
   "dependencies": {
     "autoprefixer": "^9.8.8",
-    "gulp": "^4.0.0",
+    "gulp": "^4.0.2",
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
