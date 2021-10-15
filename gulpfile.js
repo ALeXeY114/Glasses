@@ -62,11 +62,11 @@ gulp.task('styles', styles);
 gulp.task('scripts', scripts);
 gulp.task('watch', watch);
 
-gulp.task('dist', gulp.series (clean,
+gulp.task('build', gulp.series (clean,
 					gulp.parallel(styles,scripts)
 					));
 
-gulp.task('dev', gulp.series('dist','watch'));
+gulp.task('dev', gulp.series('build','watch'));
 
 
 
